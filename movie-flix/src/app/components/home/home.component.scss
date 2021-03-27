@@ -1,0 +1,58 @@
+
+.body{
+  background-image: url("/assets/homebackground.jpg");
+  background-size: cover ;
+  overflow-y:auto ;
+
+  position: relative;
+  min-height: 100vh;
+
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.body{
+  .logo-movieflix{
+    width:  175px;
+    align-content: center;
+    background-color: black;
+    margin-left: 50px;
+    margin-top: 15px;
+    color: #004BFF;
+    text-align: center;
+    padding: 4px;
+    font-family: "Bebas";
+    font-size: 36px;
+  }
+  .center-box{
+    margin: auto;
+    position:relative;
+    text-align: center;
+    margin-top: 7.5%;
+    overflow-y:hidden;
+
+    span{
+      font-family: "Bodoni MT", monospace;
+      color: white;
+      font-size: 24px;
+    }
+    .d-flex {
+      margin-top: 5px;
+      text-align: center;
+      overflow-y:hidden ;
+      a {
+        font-family: "Bebas";
+        background-color: black;
+        color: #004BFF;
+        padding: 3px 40px 3px 40px;
+        text-align: center;
+        font-size: 34px;
+        border-color: black;
+      }
+    }
+  }
+
+}

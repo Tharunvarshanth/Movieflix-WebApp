@@ -1,0 +1,36 @@
+<nav>
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="btn" ></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+
+  <h4 class=" logo-movieflix" >MOVIE FLIX</h4>
+
+
+  <ul>
+    <li class="nav-item active">
+      <a class="nav-link" href="movieflix/home">Home</a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item active">
+      <a class="nav-link" href="movieflix/admin">Admin page</a>
+    </li>
+    <li *ngIf="isAuthenticated" class="nav-item">
+      <a class="nav-link" (click)="logout()">Logout</a>
+    </li>
+    <li *ngIf="!isAuthenticated && isloginpage" class="nav-item">
+      <a class="nav-link" href="movieflix/auth">Signup</a>
+    </li>
+    <li *ngIf="!isAuthenticated && !isloginpage" class="nav-item">
+      <a class="nav-link" href="movieflix/auth">Login</a>
+    </li>
+    <li *ngIf="isAuthenticated" class="usernamedisplay">
+      <span>Hi {{this.currentusername}}</span>
+    </li>
+    <li *ngIf="!isAuthenticated" class="usernamedisplay">
+      <span>Hi Guest</span>
+    </li>
+  </ul>
+
+
+</nav>

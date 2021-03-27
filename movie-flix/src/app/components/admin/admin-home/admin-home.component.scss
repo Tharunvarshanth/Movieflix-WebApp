@@ -1,0 +1,66 @@
+.body-admin{
+  background-image: url('/assets/VBrzE9.jpg');
+  background-size: cover;
+  overflow-y: auto;
+  min-height: 100vh;
+
+  .button-group{
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    a{
+      background-color: black;
+      color: #004BFF;
+      font-family: "Bebas";
+      font-size: 32px;
+      margin-right: 5px;
+      padding: 10px;
+
+    }
+  }
+}
+
+
+
+footer{
+  border-top: 2px solid white;
+
+  overflow-y: hidden;
+  position: absolute;
+  bottom: 0;
+  margin-top: auto;
+  width: 100%;
+
+
+  font-family: "Bodoni MT";
+  color: white;
+  background-color: black;
+  padding-right: 25px;
+  padding-left: 25px;
+  display: inline-flex;
+  .footer-distributed{
+
+  }
+  .left-box{
+
+    overflow-y:hidden ;
+    text-align: center;
+    width: 40%;
+  }
+  .right-box{
+    float: right;
+    width:55%;
+    padding-top: 4px;
+    text-align: right;
+    font-size: 16px;
+    color: white;
+    i{
+      font-size: 24px;
+    }
+  }
+
+}

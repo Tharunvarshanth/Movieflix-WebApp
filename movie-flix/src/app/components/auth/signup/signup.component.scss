@@ -1,0 +1,89 @@
+.body-signup{
+  background-color: #01132B;
+  background-size: cover ;
+  overflow-y:auto ;
+  position: relative;
+  min-height: 100vh;
+
+
+
+  form{
+   margin-top:5% ;
+   margin-left:5%;
+    .form-group{
+
+      label{
+        font-size: 20px;
+        color: white;
+      }
+    }
+    .submitbtn{
+
+      margin-top: 10px;
+      margin-bottom: 200px;
+    }
+    button{
+      background-color: black;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-family: "Bebas";
+      color: #004BFF;
+      text-align: center;
+      z-index: 1;
+      font-family: "Bebas";
+      font-size: 36px;
+    }
+    i{
+      background-color: black;
+      margin-top: 10px;
+      color: #004BFF;
+      text-align: center;
+      padding: 10px;
+      font-size: 36px;
+    }
+  }
+
+  @media(max-width:1118px){
+
+    .img1,.img2,.img3,.img4{
+      display: none;
+    }
+  }
+
+  .img1{
+    position: absolute;
+    float: right;
+    right: 200px;
+    top: 125px;
+  }
+  .img2{
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    float: right;
+    right: 20px;
+    top: 425px;
+  }
+  .img3{
+    position: absolute;
+    transform: rotate(90deg);
+    width: 150px;
+    height: 300px;
+    float: right;
+    right: 350px;
+    top: 425px;
+  }
+  .img4{
+    position: absolute;
+    transform: rotate(90deg);
+    width: 150px;
+    height: 300px;
+    float: left;
+    left: 100px;
+    top: 525px;
+  }
+
+
+
+}
+

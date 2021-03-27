@@ -1,0 +1,38 @@
+.body-admin-managemovie{
+  background-color: black;
+
+  overflow-y:auto ;
+  position: relative;
+  min-height: 100vh;
+  color: white;
+
+  .form-inline{
+    margin: 50px;
+    button{
+      background-color: black;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: "Bebas";
+      color: #004BFF;
+      text-align: center;
+      z-index: 1;
+      font-family: "Bebas";
+      font-size: 24px;
+    }
+  }
+  .card-group {
+    align-items: center;
+
+
+    .card {
+
+      color: white;
+      background: transparent;
+      img {
+         align-items: center;
+         max-width: 241px;
+         max-height: 180px;
+      }
+    }
+  }
+}

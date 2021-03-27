@@ -1,0 +1,28 @@
+<div class="body-admin-managemovie">
+  <app-nav></app-nav>
+
+  <form #searchform="ngForm" class="form-inline" (ngSubmit)="search()">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputText" class="sr-only">Text</label>
+      <input type="text" required name="searchtext" [(ngModel)]="searchtext" class="form-control" id="inputText" placeholder="Movie name">
+    </div>
+    <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+    <button *ngIf="!isLoading" [disabled]="searchform.form.invalid" type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+  </form>
+
+  <div class="card-group border-success mb-3" >
+    <div class="card" *ngFor="let ml of movieList">
+      <img class="card-img-top"    src="{{'data:'+ml.poster[0].type+';base64,'+ml.poster[0].picByte.data}}"  alt="Card image cap">
+      <div (click)="onSelect(ml.movieName)" class="card-body">
+        <h4  class="card-title">{{ml.movieName}}</h4>
+        <p class="card-text">{{ml.description}}</p>
+        <p class="card-text">Caste :<small class="text-muted">{{ml.castelist}}</small></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div style="margin-bottom: 100px"></div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,103 @@
+<div class="body-signup">
+
+  <app-nav></app-nav>
+  <div *ngIf="errorMessage">
+    <div class="alert alert-danger" style="z-index: 1" role="alert">
+      {{errorMessage}}
+    </div>
+  </div>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group row">
+      <div class="col-2 ">
+        <label for="inputEmail3"  class=" col-sm-2 col-form-label">Email</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <input type="email" formControlName="username" [class.is-invalid]="registrationForm.controls.username.invalid &&registrationForm.controls.username.touched"
+                class=" form-control" id="inputEmail3" placeholder="Email">
+        <small class="text-danger" [class.d-none]="registrationForm.controls.username.valid||registrationForm.controls.username.untouched">Email is required</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2">
+        <label for="inputPassword3"  class="col-sm-2 col-form-label">Password</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <input type="password" formControlName="password" [class.is-invalid]="registrationForm.controls.password.invalid && registrationForm.controls.password.touched"
+               class="form-control" id="inputPassword3" placeholder="Password">
+        <div *ngIf="registrationForm.controls.password.invalid && registrationForm.controls.password.touched">
+          <small class="text-danger" *ngIf="registrationForm.controls.password.errors?.minlength">Length need to be more then 3</small>
+            <small class="text-danger" *ngIf="registrationForm.controls.password.errors?.required">Required</small>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2">
+        <label for="inputConfirmPassword3"  class="col-sm-2 col-form-label">ConfirmPassword</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <input type="password" formControlName="confirmpassword" [class.is-invalid]="registrationForm.errors?.misMatch && registrationForm.controls.confirmpassword.touched"
+               class="form-control" id="inputConfirmPassword3" placeholder="Password">
+        <small class="text-danger" *ngIf="registrationForm.errors?.misMatch" >Password Mismatch</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2 ">
+        <label for="inputName"  class="col-sm-2 col-form-label">Name</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <input type="text" class="form-control" [class.is-invalid]="registrationForm.controls.name.invalid && registrationForm.controls.name.touched" formControlName="name"   id="inputName" placeholder="Name">
+        <small class="text-danger" [class.d-none]="registrationForm.controls.name.untouched||registrationForm.controls.name.valid">Name Required</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2 ">
+        <label for="inputPhonenumber"  class=" col-sm-2 col-form-label">Phone-number</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <input type="text" formControlName="phonenumber" [class.is-invalid]="registrationForm.controls.phonenumber.invalid && registrationForm.controls.phonenumber.touched"  class="form-control" id="inputPhonenumber" placeholder="076-8486554">
+        <small class="text-danger"  [class.d-none]="registrationForm.controls.phonenumber.untouched || registrationForm.controls.phonenumber.valid">PhoneNumber Required</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2 ">
+        <label for="selectCountry" class=" col-sm-2 col-form-label">Country</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <select id="selectCountry" formControlName="country" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+        <small class="text-danger" [class.d-none]="registrationForm.controls.country.untouched||registrationForm.controls.country.valid">Country Required</small>
+      </div>
+
+    </div>
+
+    <div class="form-group row">
+      <div class="col-3 ">
+        <label  class=" col-sm-2 col-form-label"></label>
+      </div>
+
+      <div class="submitbtn col-3 col-sm-10">
+        <i *ngIf="isloadingbutton" class="fa fa-spinner fa-spin"></i>
+        <button type="submit"  *ngIf="!isloadingbutton" [disabled]="!registrationForm.valid"  class="btn btn-primary">Sign up</button>
+      </div>
+    </div>
+  </form>
+
+  <img class="img1" src="/assets/signup-images/images4.jpg">
+  <img class="img2" src="/assets/signup-images/vertical-limit-movie-poster-2000-1020208849.jpg">
+  <img class="img3" src="/assets/signup-images/images3.jpg">
+  <img class="img4" src="/assets/signup-images/40bac96106be0ff217f13e7c64a91a21.jpg" >
+
+  <app-footer></app-footer>
+
+
+</div>
