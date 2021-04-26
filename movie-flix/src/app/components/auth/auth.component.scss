@@ -3,7 +3,6 @@
   background-image: url("/assets/homebackground.jpg");
   background-size: cover ;
   overflow-y:auto ;
-
   position: relative;
   min-height: 100vh;
 
@@ -21,9 +20,10 @@
     background-color: black;
     margin-left: 50px;
     margin-top: 15px;
+    overflow: hidden;
     color: #004BFF;
     text-align: center;
-    padding: 4px;
+    padding: 8px;
     font-family: "Bebas";
     font-size: 36px;
   }
@@ -38,16 +38,19 @@
       font-family: "Bodoni MT", monospace;
       color: white;
       font-size: 24px;
+      overflow-y: hidden;
     }
     .d-flex {
       margin-top: 5px;
       text-align: center;
-      overflow-y:hidden ;
+
       a {
         font-family: "Bebas";
         background-color: black;
+        overflow-y: hidden;
         color: #004BFF;
-        padding: 3px 40px 3px 40px;
+        padding: 8px 40px 8px 40px;
+        margin: 2px;
         text-align: center;
         font-size: 34px;
         border-color: black;

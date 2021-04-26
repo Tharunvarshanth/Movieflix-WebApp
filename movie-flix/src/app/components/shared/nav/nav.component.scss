@@ -1,16 +1,34 @@
 nav {
+  position: relative;
   background-color: #141832;
   border-bottom: 2px solid white;
   height: 80px;
   overflow-y: hidden;
   ul {
-    float: right;
+    position: absolute;
+    right: 0;
     margin-right: 25px;
     li {
       display: inline-block;
       line-height: 60px;
       padding: 2px;
       margin: 0px 15px;
+        .searchbox {
+          background-color: transparent;
+          color: white;
+          border: none;
+          border-bottom: 1px solid white;
+        }
+
+        .searchbtn {
+          color: #006bb3;
+          padding: 0;
+          border: 1px solid white;
+          mat-icon{
+            font-size: 24px;
+          }
+        }
+
       span{
          font-size: 22px;
          color: white;
@@ -37,16 +55,17 @@ nav {
   }
   .logo-movieflix {
     position: absolute;
-    top:8px;
-    left:12%;
+
+    left:6%;
     width: 175px;
     align-content: center;
     background-color: black;
     margin-left: 50px;
+    overflow: hidden;
     margin-top: 10px;
     color: #004BFF;
     text-align: center;
-    padding: 4px;
+    padding: 8px;
     font-family: "Bebas";
     font-size: 36px;
   }
@@ -78,7 +97,7 @@ nav {
       font-size: 20px;
     }
     ul li a{
-      font-size: 16px;
+      font-size: 20px;
     }
   }
   @media (max-width: 860px) {

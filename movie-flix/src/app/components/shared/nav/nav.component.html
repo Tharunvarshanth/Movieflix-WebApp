@@ -7,7 +7,6 @@
 
   <h4 class=" logo-movieflix" >MOVIE FLIX</h4>
 
-
   <ul>
     <li class="nav-item active">
       <a class="nav-link" href="movieflix/home">Home</a>
@@ -27,10 +26,14 @@
     <li *ngIf="isAuthenticated" class="usernamedisplay">
       <span>Hi {{this.currentusername}}</span>
     </li>
+    <li *ngIf="isHomePage" class="nav-item active ">
+      <input class="form-control mr-sm-2 searchbox" type="search" [(ngModel)]="searchWord" [ngModelOptions]="{standalone: true}" placeholder="movie name" aria-label="Search">
+      <button  class="btn  my-2  searchbtn nav-link" (click)="searchbyMoviesName()"  type="submit">
+      search
+      </button>
+    </li>
     <li *ngIf="!isAuthenticated" class="usernamedisplay">
       <span>Hi Guest</span>
     </li>
   </ul>
-
-
 </nav>

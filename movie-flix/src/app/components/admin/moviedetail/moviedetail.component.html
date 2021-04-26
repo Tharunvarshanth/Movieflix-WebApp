@@ -1,11 +1,17 @@
+<app-nav></app-nav>
 <div class="body-moviedetail">
- <app-nav></app-nav>
 
-<form #editmovieForm="ngForm" (ngSubmit)="onEdit()">
+
+  <div *ngIf="uploadmessage">
+    <div class="alert alert-danger" style="z-index: 1" role="alert">
+      {{uploadmessage}}
+    </div>
+  </div>
+  <form #editmovieForm="ngForm" >
  {{this.movieModel|json}}
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputMovieName" class=" col-sm-2 col-form-label">Movie Name</label>
+      <label for="inputMovieName" class=" col-form-label">Movie Name</label>
     </div>
     <div class="col-4 col-sm-10">
       <input type="text" class=" form-control" #name="ngModel" [class.is-invalid]="name.invalid && name.touched"  name="movieName" [(ngModel)]="movieModel.movieName" required
@@ -16,7 +22,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputGenere" class=" col-sm-2 col-form-label">Genere</label>
+      <label for="inputGenere" class=" col-form-label">Genere</label>
     </div>
     <div class="col-4 col-sm-10">
       <select  required #genereArray="ngModel" [class.is-invalid]="genereArray.invalid && genereArray.touched"  class="form-select custom-select" multiple  name="genereArray" size="2"   id="inputGenere" [(ngModel)]="movieModel.geners" >
@@ -27,7 +33,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputlanguage" class=" col-sm-2 col-form-label">Language</label>
+      <label for="inputlanguage" class="col-form-label">Language</label>
     </div>
     <div class="col-4 col-sm-10">
       <select name="language" required #language="ngModel" [class.is-invalid]="language.invalid && language.touched" class="form-select" id="inputLanguage"  [(ngModel)]="movieModel.language" >
@@ -39,7 +45,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputProducer" class=" col-sm-2 col-form-label">Producers</label>
+      <label for="inputProducer" class="col-form-label">Producers</label>
     </div>
     <div class="col-4 col-sm-10">
       <input type="text" (change)="valuedividerProducer(producers)" #producers="ngModel" required [class.is-invalid]="producers.invalid && producers.touched" class="form-control" name="producers" id="inputProducer" [(ngModel)]="movieModel.producers" placeholder="Production company">
@@ -48,7 +54,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputDirector" class=" col-sm-2 col-form-label">Director</label>
+      <label for="inputDirector" class="col-form-label">Director</label>
     </div>
     <div class="col-4 col-sm-10">
       <input type="text" required #director="ngModel" [class.is-invalid]="director.invalid && director.touched" class="form-control" name="director"
@@ -58,7 +64,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputCaste" class=" col-sm-2 col-form-label">Caste List</label>
+      <label for="inputCaste" class="col-form-label">Caste List</label>
     </div>
     <div class="col-4 col-sm-10">
       <input type="text" required #caste="ngModel" [class.is-invalid]="caste.invalid && caste.touched"
@@ -68,7 +74,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputLength" class=" col-sm-2 col-form-label">Movie-Length</label>
+      <label for="inputLength" class="col-form-label">Movie-Length</label>
     </div>
     <div class="col-4 col-sm-10">
       <input required #runtime="ngModel" [class.is-invalid]="runtime.invalid && runtime.touched" type="text" class=" form-control" id="inputLength" name="runtime" [(ngModel)]="movieModel.runtime" placeholder="2:00:00 hrs">
@@ -77,7 +83,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputVideo-url" class=" col-sm-2 col-form-label">Videourl</label>
+      <label for="inputVideo-url" class="col-form-label">Videourl</label>
     </div>
     <div class="col-4 col-sm-10">
       <input required #videourl="ngModel" [class.is-invalid]="videourl.invalid && videourl.touched" type="url" class=" form-control" id="inputVideo-url" name="videourl" [(ngModel)]="movieModel.videourl" placeholder="https://www.youtube.com/">
@@ -86,7 +92,7 @@
 
   <div class="form-group row">
     <div class="col-2 ">
-      <label for="inputLength" class=" col-sm-2 col-form-label" >Description</label>
+      <label for="inputLength" class=" col-form-label" >Description</label>
     </div>
     <div class="col-4 col-sm-10">
       <textarea required #desc="ngModel" [class.is-invalid]="desc.invalid && desc.touched" class="form-control" id="exampleFormControlTextarea1" name="description" [(ngModel)]="movieModel.description"
@@ -100,7 +106,7 @@
       <button (click)="Remove(this.movieModel._id)" type="submit" class="btn btn-primary">REMOVE MOVIE</button>
     </div>
     <div class="submitbtn col-3 col-sm-10">
-      <button [disabled]="editmovieForm.form.invalid" type="submit" class="btn btn-primary">EDIT</button>
+      <button (click)="onEdit()" [disabled]="editmovieForm.form.invalid" type="submit" class="btn btn-primary">EDIT</button>
     </div>
   </div>
 
@@ -108,5 +114,6 @@
 </form>
 
 
-  <app-footer></app-footer>
+
 </div>
+<app-footer></app-footer>

@@ -1,18 +1,40 @@
 <app-nav></app-nav>
+<div id="body-home" class="body-home">
 
-<div class="row">
-  <div class="col-md-4">
-    <h1>Angular + NGRX</h1>
-    <hr><br>
-    <div *ngIf="isAuthenticated; then doSomething; else doSomethingElse;"></div>
-    <ng-template #doSomething>
-      <p>You logged in <em>{{user.username}}!</em></p>
-      <button class="btn btn-primary" (click)="logOut()">Log out</button>
-    </ng-template>
-    <ng-template #doSomethingElse>
-      <a [routerLink]="['/log-in']" class="btn btn-primary">Log in</a>
-      <a [routerLink]="['/sign-up']" class="btn btn-primary">Sign up</a>
-    </ng-template>
-  </div>
+  <div style="margin-top: 100px"></div>
+ <section id="main">
+     <h4>LATEST</h4>
+    <!-- <div class="latest-box"></div>
+      <carousel >
+        <div class="carousel-cell">
+           <img src="assets/iS9dkNm.jpg">
+        </div>
+        <div class="carousel-cell">
+          <img  src="assets/VBrzE9.jpg">
+        </div>
+      </carousel>  -->
+ </section>
+
+
+  <section id="moviegrid" *ngFor="let movies of totalmovieList">
+    <h1>{{movies.genere}}</h1>
+    <ul id="autoWidth1" class="cs-hidden">
+      <li class="item-a">
+        <carousel >
+        <div class="carousel-cell" *ngFor="let m of movies.list" (click)="onSelect(m.movieName)">
+        <div class="moviegrid-b-img">
+            <img  src="{{'data:'+m.poster[0].type+';base64,'+m.poster[0].picByte.data}}"  alt="Card image cap">
+        </div>
+        <div class="moviegrid-b-text">
+            <strong > {{m.movieName}}</strong>
+        </div>
+        </div>
+        </carousel>
+      </li>
+
+    </ul>
+  </section>
+
 </div>
-
+<div id="loader"  class="loader"></div>
+<app-footer></app-footer>

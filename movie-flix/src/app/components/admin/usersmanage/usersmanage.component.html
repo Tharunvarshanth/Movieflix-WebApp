@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+<div class="body-admin-usersmanage">
+
+  <div *ngIf="Message">
+    <div class="alert alert-danger" style="z-index: 1" role="alert">
+      {{Message}}
+    </div>
+  </div>
+  <form #searchform="ngForm" class="form-inline" (ngSubmit)="search()">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputText" class="sr-only">Text</label>
+      <input type="text" required name="searchtext" [(ngModel)]="searchtext" class="form-control" id="inputText" placeholder="Customer Name/ Email Address">
+    </div>
+    <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+    <button *ngIf="!isLoading" [disabled]="searchform.form.invalid" type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+  </form>
+
+  <div *ngIf="userList" class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+        </div>
+        <div class="table-responsive">
+          <table class="table no-wrap user-table mb-0">
+            <thead>
+            <tr>
+              <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Phonenumber</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Roles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let u of userList">
+              <td class="pl-4">1</td>
+              <td>
+                <h5 class="font-medium mb-0">{{u.name}}</h5>
+                <input [class.d-none]="true" type="text" name="name" value="{{u.name}}">
+              </td>
+              <td>
+                <span class="text-muted">{{u.username}}</span><br>
+              </td>
+              <td>
+                <span class="text-muted">{{u.phonenumber}}</span><br>
+              </td>
+              <td>
+                <span class="text-muted">{{u.roles.role}}</span><br>
+              </td>
+              <td>
+                <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle"><i class="fa fa-key"></i> </button>
+                <button type="button" (click)="delete(u)" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-trash"></i> </button>
+                <button type="button" (click)="edit(u)" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-edit"></i> </button>
+                <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-upload"></i> </button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

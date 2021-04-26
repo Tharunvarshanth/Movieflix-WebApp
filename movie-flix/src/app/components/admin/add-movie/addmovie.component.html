@@ -1,8 +1,5 @@
+<app-nav></app-nav>
 <div class="body-admin-addmovie">
-
- <div class="loader" id="loader">
- </div>
- <app-nav></app-nav>
 
   <div *ngIf="uploadMessage">
     <div class="alert alert-danger" style="z-index: 1" role="alert">
@@ -14,7 +11,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputMovieName" class=" col-sm-2 col-form-label">Movie Name</label>
+        <label for="inputMovieName" class=" col-form-label">Movie Name</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="text" class=" form-control" #name="ngModel" [class.is-invalid]="name.invalid && name.touched"  name="movieName" [(ngModel)]="movieModel.movieName" required
@@ -24,7 +21,7 @@
 
     <div class="form-group row">
       <div class="col-2">
-        <label for="inputdate" class="col-sm-2 col-form-label">Date-of-Released</label>
+        <label for="inputdate" class="col-form-label">Date-of-Released</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="date" required #releasedDate="ngModel" [class.is-invalid]="releasedDate.invalid && releasedDate.touched" class="form-control" name="releasedDate" [(ngModel)]="movieModel.releaseDate"
@@ -34,7 +31,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputGenere" class=" col-sm-2 col-form-label">Genere</label>
+        <label for="inputGenere" class=" col-form-label">Genere</label>
       </div>
       <div class="col-4 col-sm-10">
         <select  required #genereArray="ngModel" [class.is-invalid]="genereArray.invalid && genereArray.touched"  class="form-select custom-select" multiple  name="genereArray" size="2"   id="inputGenere" [(ngModel)]="movieModel.geners" >
@@ -45,7 +42,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputlanguage" class=" col-sm-2 col-form-label">Language</label>
+        <label for="inputlanguage" class="  col-form-label">Language</label>
       </div>
       <div class="col-4 col-sm-10">
         <select name="language" required #language="ngModel" [class.is-invalid]="language.invalid && language.touched" class="form-select" id="inputLanguage"  [(ngModel)]="movieModel.language" >
@@ -57,7 +54,17 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputProducer" class=" col-sm-2 col-form-label">Producers</label>
+        <label for="inputCost" class=" col-form-label">Cost</label>
+      </div>
+      <div class="col-4 col-sm-10">
+        <input type="text" class=" form-control" #cost="ngModel" [class.is-invalid]="cost.invalid && cost.touched"  name="moviecost" [(ngModel)]="movieModel.cost" required
+               id="inputCost"     placeholder="Movie Name">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2 ">
+        <label for="inputProducer" class="  col-form-label">Producers</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="text" (change)="valuedividerProducer(producers)" #producers="ngModel" required [class.is-invalid]="producers.invalid && producers.touched" class="form-control" name="producers" id="inputProducer" [(ngModel)]="movieModel.producers" placeholder="Production company">
@@ -66,7 +73,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputDirector" class=" col-sm-2 col-form-label">Director</label>
+        <label for="inputDirector" class=" col-form-label">Director</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="text" required #director="ngModel" [class.is-invalid]="director.invalid && director.touched" class="form-control" name="director"
@@ -76,7 +83,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputCaste" class=" col-sm-2 col-form-label">Caste List</label>
+        <label for="inputCaste" class=" col-form-label">Caste List</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="text" required #caste="ngModel" [class.is-invalid]="caste.invalid && caste.touched"
@@ -86,7 +93,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputLength" class=" col-sm-2 col-form-label">Movie-Length</label>
+        <label for="inputLength" class="  col-form-label">Movie-Length</label>
       </div>
       <div class="col-4 col-sm-10">
         <input required #runtime="ngModel" [class.is-invalid]="runtime.invalid && runtime.touched" type="text" class=" form-control" id="inputLength" name="runtime" [(ngModel)]="movieModel.runtime" placeholder="2:00:00 hrs">
@@ -95,7 +102,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputVideo-url" class=" col-sm-2 col-form-label">Videourl</label>
+        <label for="inputVideo-url" class=" col-form-label">Videourl</label>
       </div>
       <div class="col-4 col-sm-10">
         <input required #videourl="ngModel" [class.is-invalid]="videourl.invalid && videourl.touched" type="url" class=" form-control" id="inputVideo-url" name="videourl" [(ngModel)]="movieModel.videourl" placeholder="https://www.youtube.com/">
@@ -104,7 +111,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputLength" class=" col-sm-2 col-form-label" >Description</label>
+        <label for="inputLength" class="  col-form-label" >Description</label>
       </div>
       <div class="col-4 col-sm-10">
         <textarea required #desc="ngModel" [class.is-invalid]="desc.invalid && desc.touched" class="form-control" id="exampleFormControlTextarea1" name="description" [(ngModel)]="movieModel.description" rows="3"></textarea>
@@ -113,7 +120,7 @@
 
         <div class="form-group row">
           <div class="col-2 ">
-            <label for="inputLength"  class=" col-sm-2 col-form-label">Upload movie posters</label>
+            <label for="inputLength"  class=" col-form-label">Upload movie posters</label>
           </div>
           <div class="col-4 col-sm-10">
             <input required #file="ngModel" multiple (change)="selectFiles($event)" [class.is-invalid]="file.invalid && file.touched" type="file"
@@ -152,11 +159,8 @@
 
   <div class="alert alert-light" role="alert">{{ message }}</div>
 
-  <img class="img1" src="/assets/signup-images/images4.jpg">
-  <img class="img2" src="/assets/signup-images/vertical-limit-movie-poster-2000-1020208849.jpg">
-  <img class="img3" src="/assets/signup-images/images3.jpg">
 
 
-  <app-footer></app-footer>
 
 </div>
+<app-footer></app-footer>

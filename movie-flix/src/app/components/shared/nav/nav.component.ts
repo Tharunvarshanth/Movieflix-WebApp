@@ -21,11 +21,15 @@ export class NavComponent implements OnInit {
   isloginpage: boolean;
   isAdmin: boolean | undefined;
 
+  isHomePage = false;
+  searchWord: string;
+
 
   constructor( private router: Router, private shareSerive: SharingService, private store: Store<AppState> ) {
 
       this.isloginpage = false;
       this.isAdmin = false;
+      this.searchWord = '';
   }
 
   ngOnInit(): void {
@@ -34,18 +38,28 @@ export class NavComponent implements OnInit {
        if (this.thisurl.endsWith('login')) {
           this.isloginpage = true;
        }
-
        this.isAuthenticated = this.shareSerive.isLoggedIn();
 
        if (this.isAuthenticated){
            this.currentusername = this.shareSerive.getUserSettings().name;
            this.isAdmin = (this.shareSerive.getUserSettings().role === 'editor');
        }
+
+       let removedlink = this.thisurl;
+       removedlink = this.thisurl.replace('/movieflix', '');
+       console.log(removedlink);
+       if (removedlink.startsWith('/home')){
+          this.isHomePage = true;
+       }
   }
 
   logout(): void{
     this.store.dispatch(LogOut());
 
+  }
+
+  searchbyMoviesName(): void{
+    console.log(this.searchWord);
   }
 
 }

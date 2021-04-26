@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 @font-face {
   font-family: Babas;
   src: url('/assets/Babas-Regular.ttf');
@@ -48,3 +49,7 @@
 }
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';

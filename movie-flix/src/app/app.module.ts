@@ -23,6 +23,9 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TokenInterceptorService} from './service/token-interceptor.service';
 import {AdminutilsService} from './service/adminutils.service';
 import {FormCollectionService} from './service/form-collection.service';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './material/material.module';
+
 
 
 @NgModule({
@@ -34,13 +37,16 @@ import {FormCollectionService} from './service/form-collection.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     HomeModule,
     AdminModule,
     AuthModule,
     HomeModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [AuthService, AuthGuard, RoleGuard, SharingService,
     AdminutilsService, FormCollectionService,

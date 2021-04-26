@@ -13,9 +13,10 @@ import {FormsModule} from '@angular/forms';
 import {AdminutilsService} from '../../service/adminutils.service';
 import { ManageMoviesComponent } from './manage-movies/manage-movies.component';
 import { MoviedetailComponent } from './moviedetail/moviedetail.component';
+import { UsersmanageComponent } from './usersmanage/usersmanage.component';
 
 @NgModule({
-  declarations: [AdminComponent, AdminHomeComponent, AddmovieComponent, ManageMoviesComponent, MoviedetailComponent],
+  declarations: [AdminComponent, AdminHomeComponent, AddmovieComponent, ManageMoviesComponent, MoviedetailComponent, UsersmanageComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

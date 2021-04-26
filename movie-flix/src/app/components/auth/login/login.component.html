@@ -1,7 +1,5 @@
+<app-nav></app-nav>
 <div class="body-login">
-
-  <app-nav></app-nav>
-
   <br>
   <div *ngIf="errorMessage">
     <div class="alert alert-danger" role="alert">
@@ -22,18 +20,11 @@
                  id="exampleInputPassword1" placeholder="Password">
         <small class="text-danger" [class.d-none]="loginForm.controls.password.valid||loginForm.controls.password.untouched">Password is required</small>
       </div>
-      <div class="form-check">
-           <input type="checkbox" class="form-check-input" id="checkmeout">
-           <label class="form-check-label" >Check me out</label>
-      </div>
+
 
       <button type="submit" class="btn btn-primary" *ngIf="!isloadingbutton">LOGIN </button>
       <i *ngIf="isloadingbutton" class="fa fa-spinner fa-spin"></i>
   </form>
 
-
-
-  <app-footer></app-footer>
-
-
 </div>
+<app-footer></app-footer>

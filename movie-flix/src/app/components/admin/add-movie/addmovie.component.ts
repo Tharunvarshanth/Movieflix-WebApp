@@ -22,7 +22,7 @@ export class AddmovieComponent implements OnInit {
   message = '';
   fileInfos: Observable<any> | undefined;
 
-  movieModel = new Movie('', '', new Date(), [], '', [], [], [], '', '', '', []);
+  movieModel = new Movie('', '', new Date(), '$ 00.00', [], '', [], [], [], '', '', '', []);
 
   constructor(private  formcollectionservice: FormCollectionService, private  adminutilsService: AdminutilsService) {
     formcollectionservice.getAllList().subscribe(
@@ -65,6 +65,7 @@ export class AddmovieComponent implements OnInit {
 
     uploadFiles(id: string): void {
       this.message = '';
+      console.log(this.uploadedFileList);
       if (this.uploadedFileList != null) {
         for (let i = 0; i < this.uploadedFileList.length; i++) {
           this.upload(i, this.uploadedFileList[i], id);
@@ -95,16 +96,14 @@ export class AddmovieComponent implements OnInit {
             }, 1500);
       }
     });
-
-
-
     }
 
   onSubmit(): void {
     this.uploadMessage = '';
+    console.log(this.movieModel);
      // @ts-ignore
     document.getElementById('loader').style.display = 'block';
-    console.log(this.movieModel.releaseDate)
+    console.log(this.movieModel.releaseDate);
     this.adminutilsService.addmovie(this.movieModel).subscribe(
       res =>  {
         console.log(res._id);

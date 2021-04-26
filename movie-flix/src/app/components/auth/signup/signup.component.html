@@ -1,6 +1,5 @@
+<app-nav></app-nav>
 <div class="body-signup">
-
-  <app-nav></app-nav>
   <div *ngIf="errorMessage">
     <div class="alert alert-danger" style="z-index: 1" role="alert">
       {{errorMessage}}
@@ -11,7 +10,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputEmail3"  class=" col-sm-2 col-form-label">Email</label>
+        <label for="inputEmail3"  class=" col-form-label">Email</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="email" formControlName="username" [class.is-invalid]="registrationForm.controls.username.invalid &&registrationForm.controls.username.touched"
@@ -22,7 +21,7 @@
 
     <div class="form-group row">
       <div class="col-2">
-        <label for="inputPassword3"  class="col-sm-2 col-form-label">Password</label>
+        <label for="inputPassword3"  class=" col-form-label">Password</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="password" formControlName="password" [class.is-invalid]="registrationForm.controls.password.invalid && registrationForm.controls.password.touched"
@@ -37,7 +36,7 @@
 
     <div class="form-group row">
       <div class="col-2">
-        <label for="inputConfirmPassword3"  class="col-sm-2 col-form-label">ConfirmPassword</label>
+        <label for="inputConfirmPassword3"  class="col-form-label">ConfirmPassword</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="password" formControlName="confirmpassword" [class.is-invalid]="registrationForm.errors?.misMatch && registrationForm.controls.confirmpassword.touched"
@@ -48,7 +47,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputName"  class="col-sm-2 col-form-label">Name</label>
+        <label for="inputName"  class="col-form-label">Name</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="text" class="form-control" [class.is-invalid]="registrationForm.controls.name.invalid && registrationForm.controls.name.touched" formControlName="name"   id="inputName" placeholder="Name">
@@ -58,7 +57,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="inputPhonenumber"  class=" col-sm-2 col-form-label">Phone-number</label>
+        <label for="inputPhonenumber"  class=" col-form-label">Phone-number</label>
       </div>
       <div class="col-4 col-sm-10">
         <input type="text" formControlName="phonenumber" [class.is-invalid]="registrationForm.controls.phonenumber.invalid && registrationForm.controls.phonenumber.touched"  class="form-control" id="inputPhonenumber" placeholder="076-8486554">
@@ -68,7 +67,7 @@
 
     <div class="form-group row">
       <div class="col-2 ">
-        <label for="selectCountry" class=" col-sm-2 col-form-label">Country</label>
+        <label for="selectCountry" class="  col-form-label">Country</label>
       </div>
       <div class="col-4 col-sm-10">
         <select id="selectCountry" formControlName="country" class="form-control">
@@ -91,13 +90,5 @@
       </div>
     </div>
   </form>
-
-  <img class="img1" src="/assets/signup-images/images4.jpg">
-  <img class="img2" src="/assets/signup-images/vertical-limit-movie-poster-2000-1020208849.jpg">
-  <img class="img3" src="/assets/signup-images/images3.jpg">
-  <img class="img4" src="/assets/signup-images/40bac96106be0ff217f13e7c64a91a21.jpg" >
-
-  <app-footer></app-footer>
-
-
 </div>
+<app-footer></app-footer>

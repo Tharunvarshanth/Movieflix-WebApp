@@ -1,0 +1,12 @@
+
+.body-home {
+  background-color: black;
+  background-size: cover;
+  color: white;
+  overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
+  .card{
+    background-color: transparent;
+  }
+}

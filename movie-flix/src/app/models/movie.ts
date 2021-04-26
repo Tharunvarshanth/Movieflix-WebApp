@@ -7,6 +7,7 @@ export class Movie{
     public _id: string,
     public movieName: string,
     public releaseDate: Date,
+    public cost: string,
     public geners: Array<string>,
     public language: string,
     public producers: Array<string>,
@@ -15,7 +16,7 @@ export class Movie{
     public runtime: string,
     public  description: string,
     public videourl: string,
-    public poster: Array<P>
+    public poster: Array<any>
   ){}
 
 }

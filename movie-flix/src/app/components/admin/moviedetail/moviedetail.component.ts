@@ -11,10 +11,10 @@ import {FormCollectionService} from '../../../service/form-collection.service';
 })
 export class MoviedetailComponent implements OnInit {
 
-  movieModel = new Movie('', '', new  Date(), [], '', [], [], [], '', '', '', []);
+  movieModel = new Movie('', '', new  Date(), '', [], '', [], [], [], '', '', '', []);
   genereInputList: Array<string> | undefined;
   languageInputList: Array<string> | undefined;
-
+  uploadmessage = '';
 
   // tslint:disable-next-line:max-line-length
   constructor(private  formcollectionservice: FormCollectionService, private adminutilsService: AdminutilsService, private router: ActivatedRoute) {
@@ -40,9 +40,17 @@ export class MoviedetailComponent implements OnInit {
 
   onEdit(): void{
     console.log(this.movieModel);
+    this.adminutilsService.updateMovieby_id(this.movieModel).subscribe(
+      res => this.uploadmessage = 'updated',
+          err => this.uploadmessage = 'not updated'
+    );
   }
   Remove(id: string): void{
     console.log(id);
+    this.adminutilsService.removeMovieById(id).subscribe(
+       res => this.uploadmessage = ' Removed',
+           error => this.uploadmessage = ' Not Removed',
+     );
   }
 
   valuedividerProducer(value: any): void{
