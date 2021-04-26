@@ -28,7 +28,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -51,6 +50,8 @@ public class UserController {
     public UserController(UserRepositary _userRepositary){
         this.userRepositary = _userRepositary;
     }
+
+
 
     @PostMapping("/register")
     public ResponseEntity<?> signup(@RequestBody  User user) throws Exception {

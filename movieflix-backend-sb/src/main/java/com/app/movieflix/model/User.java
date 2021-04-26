@@ -11,7 +11,7 @@ import java.util.Set;
 public class User {
 
     @Id
-    private String id;
+    private String _id;
     private String username;
     private String password;
     private String name;
@@ -27,11 +27,11 @@ public class User {
 
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
     }
 
     public String getUsername() {
@@ -82,8 +82,8 @@ public class User {
         this.roles = roles;
     }
 
-    public User(String id, String username, String password, String name, String phonenumber) {
-        this.id = id;
+    public User(String _id, String username, String password, String name, String phonenumber) {
+        this._id = _id;
         this.username = username;
         this.password = password;
         this.name = name;

@@ -12,7 +12,6 @@ import java.util.List;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
-
 @RestController
 @RequestMapping("api/inputselector")
 public class InputSelectController {
@@ -31,7 +30,13 @@ public class InputSelectController {
              System.out.println(i.get_id());
         }
         return  inputSelectList.get(0).getCountries();
+    }
 
+    @GetMapping("/generetypes")
+    public List<String> getAllGeneres(){
+        List<InputSelectList> list = inputSelectListRepositary.findAll();
+
+        return list.get(0).getGeneres();
     }
 
     @GetMapping("/getAlllist")

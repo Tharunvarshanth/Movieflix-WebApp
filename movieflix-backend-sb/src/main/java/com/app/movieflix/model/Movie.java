@@ -1,6 +1,7 @@
 package com.app.movieflix.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,6 +16,8 @@ public class Movie {
     private String _id;
     private String movieName;
     private List<String> geners;
+    private String cost;
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
     private Date releaseDate;
     private String language;
     private List<String> producers;
@@ -26,7 +29,10 @@ public class Movie {
     //@DBRef
     private List<Image> poster;
 
-    public Movie(String _id, String movieName, List<String> geners, String language, List<String> producers, List<String> castelist, List<String> directors, String runtime, String description, String videourl,Date releaseDate   ) {
+
+
+
+    public Movie(String _id, String movieName, List<String> geners, String language, List<String> producers, List<String> castelist, List<String> directors, String runtime, String description, String videourl,Date releaseDate,String cost   ) {
         this._id = _id;
         this.movieName = movieName;
         this.geners = geners;
@@ -38,7 +44,15 @@ public class Movie {
         this.description = description;
         this.videourl = videourl;
         this.releaseDate = releaseDate;
+        this.cost = cost;
+    }
 
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
     }
     public Date getReleaseDate() {
         return releaseDate;
