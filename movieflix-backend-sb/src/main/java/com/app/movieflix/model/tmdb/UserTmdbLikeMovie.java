@@ -1,4 +1,4 @@
-package com.app.movieflix.model;
+package com.app.movieflix.model.tmdb;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,6 +13,15 @@ public class UserTmdbLikeMovie {
     private String movieId;
     private String rating;
     private String timestamp;
+    private boolean payed;
+
+    public boolean isPayed() {
+        return payed;
+    }
+
+    public void setPayed(boolean payed) {
+        this.payed = payed;
+    }
 
     public String get_id() {
         return _id;
@@ -59,12 +68,13 @@ public class UserTmdbLikeMovie {
     public UserTmdbLikeMovie() {
     }
 
-    public UserTmdbLikeMovie(String _id, String userId, String movieId, String rating, String timestamp) {
+    public UserTmdbLikeMovie(String _id, String userId, String movieId, String rating, String timestamp,Boolean payed) {
         this._id = _id;
         this.userId = userId;
         this.movieId = movieId;
         this.rating = rating;
         this.timestamp = timestamp;
+        this.payed = payed;
     }
 
 

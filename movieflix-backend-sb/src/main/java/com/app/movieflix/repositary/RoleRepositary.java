@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface RoleRepositary extends MongoRepository<Role,String> {
 
     Role findByRole(String role);
+
 }

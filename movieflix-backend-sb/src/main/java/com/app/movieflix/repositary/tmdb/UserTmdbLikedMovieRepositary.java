@@ -1,8 +1,7 @@
-package com.app.movieflix.repositary;
+package com.app.movieflix.repositary.tmdb;
 
-import com.app.movieflix.model.UserTmdbLikeMovie;
+import com.app.movieflix.model.tmdb.UserTmdbLikeMovie;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
