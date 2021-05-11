@@ -1,0 +1,30 @@
+#body-tmdb-view-info {
+  background-color: black;
+  background-size: cover;
+
+  color: white;
+  overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
+  .card{
+    background-color: #f3f3f3;
+    color: #01132B;
+    .card-body{
+      p {
+        font-size: 14px;
+        span{
+          font-size: 16px;
+        }
+      }
+      .rating{
+        font-size: 20px;
+        span{
+          padding-left: 5px;
+        }
+       .checked{
+         color:orange;
+       }
+      }
+    }
+  }
+}

@@ -25,6 +25,9 @@ import {AdminutilsService} from './service/adminutils.service';
 import {FormCollectionService} from './service/form-collection.service';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material/material.module';
+import {NgxPayPalModule} from 'ngx-paypal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -33,10 +36,12 @@ import {MaterialModule} from './material/material.module';
     AppComponent,
     ErrorComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPayPalModule,
     MaterialModule,
     HomeModule,
     AdminModule,
@@ -46,7 +51,8 @@ import {MaterialModule} from './material/material.module';
     EffectsModule.forRoot([AuthEffects]),
     SharedModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    NgbModule
   ],
   providers: [AuthService, AuthGuard, RoleGuard, SharingService,
     AdminutilsService, FormCollectionService,

@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+<div id="body-tmdb" class="body-tmdb">
+  <div style="margin-top: 100px"></div>
+
+
+  <section class="moviegrid" >
+    <h1>Liked Movies</h1>
+    <ul id="autoWidth1" class="cs-hidden">
+      <li class="item-a">
+        <carousel >
+          <div class="carousel-cell" *ngFor="let lml of likedmovielist;let i = index" (click)="photoclicked(lml)">
+            <div class="moviegrid-b-img">
+              <img  src="{{lml.poster_path}}" width="100"  alt="Card image cap">
+            </div>
+            <div class="moviegrid-b-text">
+              <strong > {{lml.orginal_title}}</strong>
+            </div>
+          </div>
+        </carousel>
+      </li>
+    </ul>
+  </section>
+
+  <section class="moviegrid" >
+    <h1>Recommendes Movies</h1>
+    <ul id="autoWidth2" class="cs-hidden">
+      <li class="item-a">
+        <carousel >
+          <div class="carousel-cell" *ngFor="let lml of recommendedmoviesinfo;let i = index " (click)="photoclicked(lml)">
+            <div class="moviegrid-b-img">
+              <img  src="assets/signup-images/images3.jpg"   alt="Card image cap">
+            </div>
+            <div class="moviegrid-b-text">
+              <strong > {{lml.title}}</strong>
+            </div>
+          </div>
+        </carousel>
+      </li>
+    </ul>
+  </section>
+
+
+
+
+
+
+</div>
+<div id="loader"  class="loader"></div>
+
+<app-footer></app-footer>

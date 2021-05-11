@@ -4,21 +4,31 @@ import { HomeRoutingModule } from './home-routing.module';
 import {HomeComponent} from './home.component';
 import {SharedModule} from '../shared/shared.module';
 import { HomeMovieDetailComponent } from './home-movie-detail/home-movie-detail.component';
-import {MdbCarouselModule, MdbModule} from 'mdb-angular-ui-kit';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {MaterialModule} from '../../material/material.module';
 import { BuyMovieComponent } from './buy-movie/buy-movie.component';
+import {NgxPayPalModule} from 'ngx-paypal';
+import {TmdbComponent} from './tmdb/tmdb.component';
+import {NgbDatepickerModule, NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
+import {TmdbViewInfoComponent} from './tmdb-view-info/tmdb-view-info.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     HomeMovieDetailComponent,
-    BuyMovieComponent
+    BuyMovieComponent,
+    TmdbViewInfoComponent,
+    TmdbComponent
   ],
   imports: [
+    IvyCarouselModule,
     CommonModule,
     SharedModule,
     HomeRoutingModule,
     MaterialModule,
+    NgxPayPalModule,
+    NgbDatepickerModule,
+    NgbRatingModule,
   ],
 
 

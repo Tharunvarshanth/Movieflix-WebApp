@@ -6,7 +6,32 @@
   overflow-y: auto;
   position: relative;
   min-height: 100vh;
+  .msgbar{
+    background-color: mediumseagreen;
+    color:white;
+    width:100%;
+    height:40px;
+    text-align: center;
+    display: none;
+    font-size: 16px;
+    padding: 5px;
+  }
   .card{
     background-color: transparent;
+    margin:20px;
+    padding:10px;
+      .detail-group {
+        margin: 5px;
+        padding: 2px;
+        font-size: 16px;
+
+        label {
+          color: #006bb3;
+          margin-right: 10px;
+          font-family: "Book Antiqua";
+          padding-right: 10px;
+        }
+      }
+
   }
 }

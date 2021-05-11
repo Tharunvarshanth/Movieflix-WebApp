@@ -2,22 +2,68 @@
 <div class="body-home">
   <app-nav></app-nav>
 
+  <div id="paypalinfo" class="msgbar">
+    {{this.message}}
+  </div>
   <div class="card">
     <div class="card-header">
-      {{movieModel.movieName}}
+     <h3>{{movieModel.movieName}} </h3>
     </div>
-
-    <iframe  class="e2e-iframe-trusted-src" width="853" height="480" [src]=videoUrl title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="play-btn">
+      <iframe  class="e2e-iframe-trusted-src" width="853" height="480" [src]=videoUrl title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <div class="card-body">
-      <span class="card-title">{{movieModel.language}}</span>
-      <p>{{movieModel.cost}}</p>
-      <p>ReleasedDate: {{movieModel.releaseDate}}</p>
-      <p>Cast List: {{movieModel.castelist}}</p>
-      <p>Directors: {{movieModel.directors}}</p>
-      <p>Prducers: {{movieModel.producers}}</p>
-      <p class="card-text">{{movieModel.description}}</p>
+      <table>
+        <tr >
+          <td class="detail-group">
+               <label>Language : {{movieModel.language}} <span>&nbsp; | </span> </label>
 
-      <a href="#" class="btn btn-primary">Buy</a>
+          </td>
+          <td class="detail-group">
+               <label>Prize : {{movieModel.cost}} <span>&nbsp; | </span></label>
+          </td>
+          <td class="detail-group">
+               <label>Data of Released : {{movieModel.releaseDate}}</label>
+          </td>
+        </tr>
+       <tr>
+        <td class="detail-group">
+          <label>Castlist :
+            <p >
+              <span *ngFor="let l of movieModel.castelist">{{l}}&nbsp; | </span>
+            </p>
+          </label>
+        </td>
+     </tr>
+     <tr>
+          <td  class="detail-group">
+               <label>Directors :  {{movieModel.directors}}</label>
+          </td>
+     </tr>
+      <tr>
+        <td class="detail-group">
+               <label>Producers : {{movieModel.producers}} </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="detail-group">
+            <label >{{movieModel.description}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <app-buy-movie></app-buy-movie>
+        </td>
+      </tr>
+        <tr id="creditcardwindows" style="display:block ">
+          <td>
+            <div id="app">
+               <app-buy-movie [movieprize]="movieModel.cost"  (outputmsg)="displaypaymentinfo($event)"></app-buy-movie>
+            </div>
+          </td>
+        </tr>
+
+    </table>
     </div>
   </div>
 

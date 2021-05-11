@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user';
 import {SharingService} from '../../service/sharing.service';
-import {Store} from '@ngrx/store';
-import {AppState} from '../../store/app.states';
-import {LogOut} from '../../store/actions/auth.actions';
+
 import {HomeMovieService} from '../../service/home-movie.service';
 import {Movie} from '../../models/movie';
 import {ActivatedRoute, Router} from '@angular/router';

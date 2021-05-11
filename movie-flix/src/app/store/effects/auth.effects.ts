@@ -59,7 +59,7 @@ export class AuthEffects {
     tap((parse: any) => {
       console.log('LogInSucces', JSON.stringify(parse));
       this.shareserive.setSettings(parse);
-      this.router.navigate(['movieflix/home'], {queryParams: {name: parse.name}});
+      this.router.navigate(['movieflix/home' ] );
     })
   );
 

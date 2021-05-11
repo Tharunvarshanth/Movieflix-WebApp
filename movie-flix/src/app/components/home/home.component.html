@@ -14,7 +14,10 @@
         </div>
       </carousel>  -->
  </section>
-
+  <br>
+ <section>
+   <p>For a better experience Use our The Movie Database <a href="movieflix/home/tmdb/home">click here</a></p>
+ </section>
 
   <section id="moviegrid" *ngFor="let movies of totalmovieList">
     <h1>{{movies.genere}}</h1>
@@ -22,12 +25,12 @@
       <li class="item-a">
         <carousel >
         <div class="carousel-cell" *ngFor="let m of movies.list" (click)="onSelect(m.movieName)">
-        <div class="moviegrid-b-img">
+          <div class="moviegrid-b-img">
             <img  src="{{'data:'+m.poster[0].type+';base64,'+m.poster[0].picByte.data}}"  alt="Card image cap">
-        </div>
-        <div class="moviegrid-b-text">
+          </div>
+          <div class="moviegrid-b-text">
             <strong > {{m.movieName}}</strong>
-        </div>
+          </div>
         </div>
         </carousel>
       </li>

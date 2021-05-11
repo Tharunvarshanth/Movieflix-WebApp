@@ -10,12 +10,15 @@ import {StoreModule} from '@ngrx/store';
 
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, SignupComponent],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    SharedModule,
+    declarations: [AuthComponent, LoginComponent, SignupComponent],
+    exports: [
+        AuthComponent
+    ],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        SharedModule,
 
-  ]
+    ]
 })
 export class AuthModule { }

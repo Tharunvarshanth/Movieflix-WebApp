@@ -1,0 +1,72 @@
+.body-tmdb{
+  background-color: black;
+  background-size: cover ;
+  display: none;
+  color: white;
+  overflow-y:auto ;
+  position: relative;
+  min-height: 100vh;
+  .moviegrid{
+    border-top: 1px solid whitesmoke;
+    h1{
+      padding-left: 30px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase ;
+      font-size: 1.2rem;
+    }
+    .cS-hidden{
+      overflow:visible !important;
+    }
+    carousel{
+
+    }
+    .carousel-cell{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      border-radius: 10px;
+      box-shadow: 2px 2px 30px midnightblue;
+      background-color: whitesmoke;
+
+      overflow:hidden;
+      color: black;
+      .moviegrid-b-img {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+      .moviegrid-b-text{
+        display: flex;
+        width:100%;
+        padding: 2px;
+        justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        strong{
+          text-align: center;
+          overflow-y: hidden;
+
+        }
+
+      }
+    }
+  }
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

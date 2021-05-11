@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<div id="body-tmdb-view-info" class="body-tmdb">
+
+  <div style="margin-top: 100px"></div>
+  <div  class="card">
+    <h5 class="card-header" style="font-size: 24px">{{movieinfo.title}}</h5>
+    <div class="card-body">
+      <img src="{{movieinfo.poster_path}}" alt="example">
+      <h5 class="card-title"></h5>
+      <p>
+        <span *ngFor="let genere of movieinfo.genres">
+             {{genere.name}} &nbsp;|
+        </span>
+      </p>
+      <br>
+      <p class="card-text">{{movieinfo.overview}}</p>
+      <br><br>
+      <div class="rating">
+        Movie Rating
+        <ngb-rating [(rate)]="currentRate"></ngb-rating>
+      </div>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+
+</div>
+
+
+<app-footer></app-footer>
